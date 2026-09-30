@@ -1,10 +1,10 @@
 # Jev Playground requests
 
-This 26-case benchmark has 13 news-topic classifications and 13 passage-grounded BoolQ decisions. In Jev Playground's separate fields, paste each `State` object into **State** and the complete named map shown as `Question` into **Question**.
+This 26-case benchmark has 13 news-topic classifications and 13 passage-grounded BoolQ decisions. In Jev Playground's separate fields, paste each State object into **State** and the complete named map shown as Question into **Question**.
 
 Expected answers are for checking after each run only; do not paste them into Jev.
 
-## News topic classification (AG News)
+## Choice-only requests (AG News)
 
 ### 1. `ag-news-train-29994`
 
@@ -209,179 +209,7 @@ Question:
 }
 ```
 
-## Passage-grounded yes/no (BoolQ)
-
-### 8. `boolq-train-00000`
-
-Expected: `true`
-
-State:
-
-```json
-{
-  "passage": "Persian (/ˈpɜːrʒən, -ʃən/), also known by its endonym Farsi (فارسی fārsi (fɒːɾˈsiː) ( listen)), is one of the Western Iranian languages within the Indo-Iranian branch of the Indo-European language family. It is primarily spoken in Iran, Afghanistan (officially known as Dari since 1958), and Tajikistan (officially known as Tajiki since the Soviet era), and some other regions which historically were Persianate societies and considered part of Greater Iran. It is written in the Persian alphabet, a modified variant of the Arabic script, which itself evolved from the Aramaic alphabet.",
-  "question": "do iran and afghanistan speak the same language"
-}
-```
-
-Question:
-
-```json
-{
-  "answer": {
-    "type": "noul",
-    "instructions": "Using only the passage, is the answer to the question yes?",
-    "criteria": {
-      "true": "The answer to the supplied question is yes, based only on the supplied passage.",
-      "false": "The answer is no, based only on the supplied passage."
-    }
-  }
-}
-```
-
-### 9. `boolq-train-00004`
-
-Expected: `false`
-
-State:
-
-```json
-{
-  "passage": "As with other games in The Elder Scrolls series, the game is set on the continent of Tamriel. The events of the game occur a millennium before those of The Elder Scrolls V: Skyrim and around 800 years before The Elder Scrolls III: Morrowind and The Elder Scrolls IV: Oblivion. It has a broadly similar structure to Skyrim, with two separate conflicts progressing at the same time, one with the fate of the world in the balance, and one where the prize is supreme power on Tamriel. In The Elder Scrolls Online, the first struggle is against the Daedric Prince Molag Bal, who is attempting to meld the plane of Mundus with his realm of Coldharbour, and the second is to capture the vacant imperial throne, contested by three alliances of the mortal races. The player character has been sacrificed to Molag Bal, and Molag Bal has stolen their soul, the recovery of which is the primary game objective.",
-  "question": "is elder scrolls online the same as skyrim"
-}
-```
-
-Question:
-
-```json
-{
-  "answer": {
-    "type": "noul",
-    "instructions": "Using only the passage, is the answer to the question yes?",
-    "criteria": {
-      "true": "The answer to the supplied question is yes, based only on the supplied passage.",
-      "false": "The answer is no, based only on the supplied passage."
-    }
-  }
-}
-```
-
-### 10. `boolq-train-00009`
-
-Expected: `true`
-
-State:
-
-```json
-{
-  "passage": "With the box office success of Batman Forever in June 1995, Warner Bros. immediately commissioned a sequel. They hired director Joel Schumacher and writer Akiva Goldsman to reprise their duties the following August, and decided it was best to fast track production for a June 1997 target release date, which is a break from the usual 3-year gap between films. Schumacher wanted to homage both the broad camp style of the 1960s television series and the work of Dick Sprang. The storyline of Batman & Robin was conceived by Schumacher and Goldsman during pre-production on A Time to Kill. Portions of Mr. Freeze's back-story were based on the Batman: The Animated Series episode ``Heart of Ice'', written by Paul Dini.",
-  "question": "is batman and robin a sequel to batman forever"
-}
-```
-
-Question:
-
-```json
-{
-  "answer": {
-    "type": "noul",
-    "instructions": "Using only the passage, is the answer to the question yes?",
-    "criteria": {
-      "true": "The answer to the supplied question is yes, based only on the supplied passage.",
-      "false": "The answer is no, based only on the supplied passage."
-    }
-  }
-}
-```
-
-### 11. `boolq-train-00010`
-
-Expected: `false`
-
-State:
-
-```json
-{
-  "passage": "Badgers are short-legged omnivores in the family Mustelidae, which also includes the otters, polecats, weasels, and wolverines. They belong to the caniform suborder of carnivoran mammals. The 11 species of badgers are grouped in three subfamilies: Melinae (Eurasian badgers), Mellivorinae (the honey badger or ratel), and Taxideinae (the American badger). The Asiatic stink badgers of the genus Mydaus were formerly included within Melinae (and thus Mustelidae), but recent genetic evidence indicates these are actually members of the skunk family, placing them in the taxonomic family Mephitidae.",
-  "question": "is a wolverine the same as a badger"
-}
-```
-
-Question:
-
-```json
-{
-  "answer": {
-    "type": "noul",
-    "instructions": "Using only the passage, is the answer to the question yes?",
-    "criteria": {
-      "true": "The answer to the supplied question is yes, based only on the supplied passage.",
-      "false": "The answer is no, based only on the supplied passage."
-    }
-  }
-}
-```
-
-### 12. `boolq-train-00013`
-
-Expected: `true`
-
-State:
-
-```json
-{
-  "passage": "Calcium carbide is a chemical compound with the chemical formula of CaC. Its main use industrially is in the production of acetylene and calcium cyanamide.",
-  "question": "calcium carbide cac2 is the raw material for the production of acetylene"
-}
-```
-
-Question:
-
-```json
-{
-  "answer": {
-    "type": "noul",
-    "instructions": "Using only the passage, is the answer to the question yes?",
-    "criteria": {
-      "true": "The answer to the supplied question is yes, based only on the supplied passage.",
-      "false": "The answer is no, based only on the supplied passage."
-    }
-  }
-}
-```
-
-### 13. `boolq-train-00015`
-
-Expected: `false`
-
-State:
-
-```json
-{
-  "passage": "A shoot-out is usually considered for statistical purposes to be separate from the match which preceded it. In the case of a two-legged fixture, the two matches are still considered either as two draws or as one win and one loss; in the case of a single match, it is still considered as a draw. This contrasts with a fixture won in extra time, where the score at the end of normal time is superseded. Converted shoot-out penalties are not considered as goals scored by a player for the purposes of their individual records, or for ``golden boot'' competitions.",
-  "question": "does a penalty shoot out goal count towards the golden boot"
-}
-```
-
-Question:
-
-```json
-{
-  "answer": {
-    "type": "noul",
-    "instructions": "Using only the passage, is the answer to the question yes?",
-    "criteria": {
-      "true": "The answer to the supplied question is yes, based only on the supplied passage.",
-      "false": "The answer is no, based only on the supplied passage."
-    }
-  }
-}
-```
-
-## News topic classification (AG News)
-
-### 14. `ag-news-train-00003`
+### 8. `ag-news-train-00003`
 
 Expected: `"business"`
 
@@ -410,7 +238,7 @@ Question:
 }
 ```
 
-### 15. `ag-news-train-00030`
+### 9. `ag-news-train-00030`
 
 Expected: `"business"`
 
@@ -439,7 +267,7 @@ Question:
 }
 ```
 
-### 16. `ag-news-train-00038`
+### 10. `ag-news-train-00038`
 
 Expected: `"business"`
 
@@ -468,7 +296,7 @@ Question:
 }
 ```
 
-### 17. `ag-news-train-00078`
+### 11. `ag-news-train-00078`
 
 Expected: `"sci_tech"`
 
@@ -497,7 +325,7 @@ Question:
 }
 ```
 
-### 18. `ag-news-train-00090`
+### 12. `ag-news-train-00090`
 
 Expected: `"sci_tech"`
 
@@ -526,9 +354,206 @@ Question:
 }
 ```
 
-## Passage-grounded yes/no (BoolQ)
+### 13. `ag-news-train-00073`
 
-### 19. `boolq-train-00006`
+Expected: `"business"`
+
+State:
+
+```json
+{
+  "text": "Dutch Firm Beats Apple to Punch A music retailer from the Netherlands beats Apple by launching a download service in Europe's latest market battleground. Also: Movie industry wrests agreement from defunct company.... Microsoft challenges Photoshop   hellip;. and more."
+}
+```
+
+Question:
+
+```json
+{
+  "topic": {
+    "type": "choice",
+    "instructions": "Which news topic best classifies this article?",
+    "criteria": {
+      "world": "International affairs, politics, diplomacy, conflict, or major world events.",
+      "sports": "Sports competitions, athletes, teams, or sporting organizations.",
+      "business": "Companies, markets, finance, jobs, trade, or the economy.",
+      "sci_tech": "Technology, science, software, devices, research, or space."
+    }
+  }
+}
+```
+
+## Bool-only requests (BoolQ)
+
+### 14. `boolq-train-00000`
+
+Expected: `true`
+
+State:
+
+```json
+{
+  "passage": "Persian (/ˈpɜːrʒən, -ʃən/), also known by its endonym Farsi (فارسی fārsi (fɒːɾˈsiː) ( listen)), is one of the Western Iranian languages within the Indo-Iranian branch of the Indo-European language family. It is primarily spoken in Iran, Afghanistan (officially known as Dari since 1958), and Tajikistan (officially known as Tajiki since the Soviet era), and some other regions which historically were Persianate societies and considered part of Greater Iran. It is written in the Persian alphabet, a modified variant of the Arabic script, which itself evolved from the Aramaic alphabet.",
+  "question": "do iran and afghanistan speak the same language"
+}
+```
+
+Question:
+
+```json
+{
+  "answer": {
+    "type": "noul",
+    "instructions": "Using only the passage, is the answer to the question yes?",
+    "criteria": {
+      "true": "The answer to the supplied question is yes, based only on the supplied passage.",
+      "false": "The answer is no, based only on the supplied passage."
+    }
+  }
+}
+```
+
+### 15. `boolq-train-00004`
+
+Expected: `false`
+
+State:
+
+```json
+{
+  "passage": "As with other games in The Elder Scrolls series, the game is set on the continent of Tamriel. The events of the game occur a millennium before those of The Elder Scrolls V: Skyrim and around 800 years before The Elder Scrolls III: Morrowind and The Elder Scrolls IV: Oblivion. It has a broadly similar structure to Skyrim, with two separate conflicts progressing at the same time, one with the fate of the world in the balance, and one where the prize is supreme power on Tamriel. In The Elder Scrolls Online, the first struggle is against the Daedric Prince Molag Bal, who is attempting to meld the plane of Mundus with his realm of Coldharbour, and the second is to capture the vacant imperial throne, contested by three alliances of the mortal races. The player character has been sacrificed to Molag Bal, and Molag Bal has stolen their soul, the recovery of which is the primary game objective.",
+  "question": "is elder scrolls online the same as skyrim"
+}
+```
+
+Question:
+
+```json
+{
+  "answer": {
+    "type": "noul",
+    "instructions": "Using only the passage, is the answer to the question yes?",
+    "criteria": {
+      "true": "The answer to the supplied question is yes, based only on the supplied passage.",
+      "false": "The answer is no, based only on the supplied passage."
+    }
+  }
+}
+```
+
+### 16. `boolq-train-00009`
+
+Expected: `true`
+
+State:
+
+```json
+{
+  "passage": "With the box office success of Batman Forever in June 1995, Warner Bros. immediately commissioned a sequel. They hired director Joel Schumacher and writer Akiva Goldsman to reprise their duties the following August, and decided it was best to fast track production for a June 1997 target release date, which is a break from the usual 3-year gap between films. Schumacher wanted to homage both the broad camp style of the 1960s television series and the work of Dick Sprang. The storyline of Batman & Robin was conceived by Schumacher and Goldsman during pre-production on A Time to Kill. Portions of Mr. Freeze's back-story were based on the Batman: The Animated Series episode ``Heart of Ice'', written by Paul Dini.",
+  "question": "is batman and robin a sequel to batman forever"
+}
+```
+
+Question:
+
+```json
+{
+  "answer": {
+    "type": "noul",
+    "instructions": "Using only the passage, is the answer to the question yes?",
+    "criteria": {
+      "true": "The answer to the supplied question is yes, based only on the supplied passage.",
+      "false": "The answer is no, based only on the supplied passage."
+    }
+  }
+}
+```
+
+### 17. `boolq-train-00010`
+
+Expected: `false`
+
+State:
+
+```json
+{
+  "passage": "Badgers are short-legged omnivores in the family Mustelidae, which also includes the otters, polecats, weasels, and wolverines. They belong to the caniform suborder of carnivoran mammals. The 11 species of badgers are grouped in three subfamilies: Melinae (Eurasian badgers), Mellivorinae (the honey badger or ratel), and Taxideinae (the American badger). The Asiatic stink badgers of the genus Mydaus were formerly included within Melinae (and thus Mustelidae), but recent genetic evidence indicates these are actually members of the skunk family, placing them in the taxonomic family Mephitidae.",
+  "question": "is a wolverine the same as a badger"
+}
+```
+
+Question:
+
+```json
+{
+  "answer": {
+    "type": "noul",
+    "instructions": "Using only the passage, is the answer to the question yes?",
+    "criteria": {
+      "true": "The answer to the supplied question is yes, based only on the supplied passage.",
+      "false": "The answer is no, based only on the supplied passage."
+    }
+  }
+}
+```
+
+### 18. `boolq-train-00013`
+
+Expected: `true`
+
+State:
+
+```json
+{
+  "passage": "Calcium carbide is a chemical compound with the chemical formula of CaC. Its main use industrially is in the production of acetylene and calcium cyanamide.",
+  "question": "calcium carbide cac2 is the raw material for the production of acetylene"
+}
+```
+
+Question:
+
+```json
+{
+  "answer": {
+    "type": "noul",
+    "instructions": "Using only the passage, is the answer to the question yes?",
+    "criteria": {
+      "true": "The answer to the supplied question is yes, based only on the supplied passage.",
+      "false": "The answer is no, based only on the supplied passage."
+    }
+  }
+}
+```
+
+### 19. `boolq-train-00015`
+
+Expected: `false`
+
+State:
+
+```json
+{
+  "passage": "A shoot-out is usually considered for statistical purposes to be separate from the match which preceded it. In the case of a two-legged fixture, the two matches are still considered either as two draws or as one win and one loss; in the case of a single match, it is still considered as a draw. This contrasts with a fixture won in extra time, where the score at the end of normal time is superseded. Converted shoot-out penalties are not considered as goals scored by a player for the purposes of their individual records, or for ``golden boot'' competitions.",
+  "question": "does a penalty shoot out goal count towards the golden boot"
+}
+```
+
+Question:
+
+```json
+{
+  "answer": {
+    "type": "noul",
+    "instructions": "Using only the passage, is the answer to the question yes?",
+    "criteria": {
+      "true": "The answer to the supplied question is yes, based only on the supplied passage.",
+      "false": "The answer is no, based only on the supplied passage."
+    }
+  }
+}
+```
+
+### 20. `boolq-train-00006`
 
 Expected: `false`
 
@@ -556,7 +581,7 @@ Question:
 }
 ```
 
-### 20. `boolq-train-00012`
+### 21. `boolq-train-00012`
 
 Expected: `false`
 
@@ -584,7 +609,7 @@ Question:
 }
 ```
 
-### 21. `boolq-train-00023`
+### 22. `boolq-train-00023`
 
 Expected: `false`
 
@@ -612,7 +637,7 @@ Question:
 }
 ```
 
-### 22. `boolq-train-00031`
+### 23. `boolq-train-00031`
 
 Expected: `true`
 
@@ -640,7 +665,7 @@ Question:
 }
 ```
 
-### 23. `boolq-train-00036`
+### 24. `boolq-train-00036`
 
 Expected: `true`
 
@@ -668,7 +693,7 @@ Question:
 }
 ```
 
-### 24. `boolq-train-00037`
+### 25. `boolq-train-00037`
 
 Expected: `false`
 
@@ -678,35 +703,6 @@ State:
 {
   "passage": "In informal games, it is customary to announce ``check'' when making a move that puts the opponent's king in check. In formal competitions, however, check is rarely announced.",
   "question": "do you always have to say check in chess"
-}
-```
-
-### 25. `ag-news-train-00073`
-
-Expected: `"business"`
-
-State:
-
-```json
-{
-  "text": "Dutch Firm Beats Apple to Punch A music retailer from the Netherlands beats Apple by launching a download service in Europe's latest market battleground. Also: Movie industry wrests agreement from defunct company.... Microsoft challenges Photoshop   hellip;. and more."
-}
-```
-
-Question:
-
-```json
-{
-  "topic": {
-    "type": "choice",
-    "instructions": "Which news topic best classifies this article?",
-    "criteria": {
-      "world": "International affairs, politics, diplomacy, conflict, or major world events.",
-      "sports": "Sports competitions, athletes, teams, or sporting organizations.",
-      "business": "Companies, markets, finance, jobs, trade, or the economy.",
-      "sci_tech": "Technology, science, software, devices, research, or space."
-    }
-  }
 }
 ```
 
@@ -737,4 +733,3 @@ Question:
   }
 }
 ```
-

@@ -63,9 +63,9 @@ Jev Playground may show State and Question in separate editors. To mirror that w
 
 ## Dataset and manual requests
 
-[data/evaluation_dataset.jsonl](data/evaluation_dataset.jsonl) holds the 26 labeled source records. Their provenance, selection, and label mapping are documented in [data/README.md](data/README.md).
+[data/evaluation_dataset.jsonl](data/evaluation_dataset.jsonl) holds 26 labeled source records, ordered as 13 choice-only then 13 bool-only requests. Their provenance, selection, and label mapping are documented in [data/README.md](data/README.md).
 
-For manual testing in Jev Playground, copy one complete State/Question pair at a time from [data/requests.md](data/requests.md). For the local service's `/docs` page, copy one complete JSON line at a time from [data/local_service_requests.jsonl](data/local_service_requests.jsonl) into the request body. The expected answers in `requests.md` are for manual checking only and are not part of the API request.
+For manual testing in Jev Playground, copy one complete State/Question pair at a time from [data/jev_requests.md](data/jev_requests.md). For the local service's `/docs` page, copy one complete JSON line at a time from [data/local_service_requests.jsonl](data/local_service_requests.jsonl) into the request body. The expected answers in `jev_requests.md` are for manual checking only and are not part of the API request.
 
 ## Run the full local dataset
 
@@ -81,4 +81,4 @@ The script retries temporary `429`, `502`, and `503` responses with exponential 
 
 Both services were evaluated against the same 26 source-labeled cases (13 AG News topic classifications and 13 BoolQ passage-grounded yes/no decisions). The local Gemini-backed service answered 24 of 26 cases correctly (**92.31%**); Jev Playground answered 23 of 26 correctly (**88.46%**). The detailed runs are available in [the local results](results/local_results.md) and [the Jev Playground results](results/jev_test_results.md).
 
-The Boolean cases were correct for both services. The remaining errors were intentionally included topic-boundary cases: local Gemini classified AG News rows 38 and 73 as `sci_tech` rather than the source `business` label, while Jev classified rows 3 and 30 as `world` and row 38 as `sci_tech` rather than `business`. These results show that both implementations handle the two task types reliably, while the residual disagreement is concentrated in the known ambiguous business/technology/world boundaries of AG News.
+The Boolean cases were correct for both services. The remaining errors were intentionally included topic-boundary cases: local Gemini classified AG News rows 3 and 38 as `world` and `sci_tech` rather than the source `business` label, while Jev classified rows 3 and 30 as `world` and row 38 as `sci_tech` rather than `business`. These results show that both implementations handle the two task types reliably, while the residual disagreement is concentrated in the known ambiguous business/technology/world boundaries of AG News.
