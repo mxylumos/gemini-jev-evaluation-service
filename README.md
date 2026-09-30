@@ -79,6 +79,14 @@ The script retries temporary `429`, `502`, and `503` responses with exponential 
 
 ## Evaluation conclusion
 
-Both services were evaluated against the same 26 source-labeled cases (13 AG News topic classifications and 13 BoolQ passage-grounded yes/no decisions). The local Gemini-backed service answered 24 of 26 cases correctly (**92.31%**); Jev Playground answered 23 of 26 correctly (**88.46%**). The detailed runs are available in [the local results](results/local_results.md) and [the Jev Playground results](results/jev_test_results.md).
+Both services were evaluated against exactly the same 26 source-labeled cases: 13 AG News four-way topic classifications and 13 BoolQ passage-grounded yes/no decisions. The local Gemini-backed service completed every request and answered 24 of 26 correctly (**92.31%**). Jev Playground also completed every request and answered 23 of 26 correctly (**88.46%**).
 
-The Boolean cases were correct for both services. The remaining errors were intentionally included topic-boundary cases: local Gemini classified AG News rows 3 and 38 as `world` and `sci_tech` rather than the source `business` label, while Jev classified rows 3 and 30 as `world` and row 38 as `sci_tech` rather than `business`. These results show that both implementations handle the two task types reliably, while the residual disagreement is concentrated in the known ambiguous business/technology/world boundaries of AG News.
+| Task | Local Gemini | Jev Playground | Interpretation |
+| --- | ---: | ---: | --- |
+| AG News `choice` | 11 / 13 (84.62%) | 10 / 13 (76.92%) | The only errors for either system occur here. |
+| BoolQ `noul` | 13 / 13 (100%) | 13 / 13 (100%) | Both systems consistently follow the supplied passage for this sample. |
+| Overall | 24 / 26 (92.31%) | 23 / 26 (88.46%) | Local Gemini is ahead by one case on this benchmark. |
+
+The local errors are both deliberately selected AG News boundary cases whose source label is `business`: row 3 concerns Iraqi oil exports during conflict and was predicted as `world`; row 38 discusses IBM's email research and was predicted as `sci_tech`. Jev has the same two types of ambiguity, but on three cases: it predicted rows 3 and 30 as `world` and row 38 as `sci_tech`, where all three source labels are `business`. In other words, the disagreement is not random across the benchmark; it is concentrated where an article's subject matter overlaps business with international affairs, safety/politics, or technology.
+
+These figures should be read as an evaluation of this fixed, deliberately small benchmark rather than a general ranking of the underlying models. The AG News labels are the source-dataset ground truth even when an alternative category can sound plausible, and the five chosen boundary cases make that limitation visible. Likewise, the returned probabilities and confidence values are useful diagnostic signals, but they are not directly comparable across providers: Gemini reports structured-output estimates normalized by this service, whereas Jev reports its own model-specific values. The per-case evidence, including every prediction, probability, confidence, and retry count, is available in [the local results](results/local_results.md) and [the Jev Playground results](results/jev_test_results.md).
